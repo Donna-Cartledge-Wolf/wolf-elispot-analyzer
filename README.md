@@ -17,8 +17,8 @@ The project was developed as part of **Wolf Analytics**, a scientific data-analy
 - Automated mapping and analysis of all 96 wells
 - Batch processing of plate images
 - Per-well spot counts, signal metrics, QC flags, and heatmaps
-- Synthetic benchmark across 192 wells
-- Pearson correlation with known generated spot counts: **r = 0.922**
+- Synthetic ground-truth benchmark across 192 wells
+- Pearson correlation between generated and detected spot counts: **r = 0.922**
 
 ---
 
