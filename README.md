@@ -221,17 +221,17 @@ This is an important design feature of the project: the algorithm can be evaluat
 
 ---
 
-## Baseline validation result
+## Baseline validation results
 
 The current v0.1 algorithm was tested against the two included synthetic plates (**192 wells total**).
 
-- **Pearson correlation with known generated counts:** `0.922`
+- **Pearson correlation between generated and detected spot counts:** r = 0.922
 - **Mean absolute error:** `24.39` spots/well
 - **Median absolute error:** `14.0` spots/well
 
 ![Synthetic validation scatter](assets/validation_scatter.png)
 
-The strong correlation indicates that the current algorithm captures relative signal patterns well. Absolute counts remain less accurate in crowded wells because overlapping spots may not form individually resolvable intensity peaks. See [`VALIDATION.md`](VALIDATION.md) for interpretation and the planned improvement path.
+Across the synthetic benchmark, detected counts tracked generated spot counts strongly overall (Pearson r = 0.922). Absolute enumeration became progressively less accurate in crowded wells, where overlapping signals produced fewer individually resolvable intensity peaks. The current prototype therefore performs better for relative signal discrimination than for absolute spot counting at high densities. Further development will focus on separating touching/overlapping spots and improving high-density quantitation. See [`VALIDATION.md`](VALIDATION.md) for additional interpretation and the planned improvement path.
 
 ---
 
