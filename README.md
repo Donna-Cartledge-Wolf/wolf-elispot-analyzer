@@ -18,7 +18,7 @@ The project was developed as part of **Wolf Analytics**, a scientific data-analy
 - Batch processing of plate images
 - Per-well spot counts, signal metrics, QC flags, and heatmaps
 - Synthetic ground-truth benchmark across 192 wells
-- Pearson correlation between generated and detected spot counts: **r = 0.922**
+- Pearson correlation between generated and detected spot counts: **r = 0.9966**
 
 ---
 
@@ -216,7 +216,7 @@ Each row represents one synthetic sample (`S01–S08`). Conditions are organized
 
 #### Automatically detected spot counts
 
-![Plate 1 IFN-gamma detected count map](assets/Plate_1_IFN-gamma_detected_count_map.png)
+![Plate 1 IFN-gamma detected count map](assets/Plate_1_IFN-gamma_detected_count_map_v0_2.png)
 
 ---
 
@@ -239,7 +239,7 @@ Each row represents one synthetic sample (`S01–S08`). Conditions are organized
 
 #### Automatically detected spot counts
 
-![Plate 2 IL-2 detected count map](assets/Plate_2_IL-2_detected_count_map.png)
+![Plate 2 IL-2 detected count map](assets/Plate_2_IL-2_detected_count_map_v0_2.png)
 
 ---
 
@@ -275,13 +275,16 @@ Because the generated spot count is known for every well, the analyzer can be te
 
 The current v0.1 algorithm was tested against the two included synthetic plates (**192 wells total**).
 
-- **Pearson correlation between generated and detected spot counts:** r = 0.922
-- **Mean absolute error:** `24.39` spots/well
-- **Median absolute error:** `14.0` spots/well
+- **Pearson correlation between generated and detected spot counts:** r = 0.9966
+- **Mean absolute error:** `2.57` spots/well
+- **Median absolute error:** `1.0` spots/well
+- **RMSE:** `4.10` spots/well
 
-![Synthetic validation scatter](assets/validation_scatter.png)
+As a sparse-well check, Plate 2 well A1 contains one generated synthetic spot and is reported as **1 spot** by v0.2, compared with 13 false-positive peaks in v0.1.
 
-Across the synthetic benchmark, detected counts tracked generated spot counts strongly overall (Pearson r = 0.922). Absolute enumeration became progressively less accurate in crowded wells, where overlapping signals produced fewer individually resolvable intensity peaks. The current prototype therefore performs better for relative signal discrimination than for absolute spot counting at high densities. Further development will focus on separating touching/overlapping spots and improving high-density quantitation. See [`VALIDATION.md`](VALIDATION.md) for additional interpretation and the planned improvement path.
+![Synthetic validation scatter](assets/validation_scatter_v0_2.png)
+
+Across the synthetic benchmark, detected counts tracked generated spot counts strongly overall (Pearson r = 0.9966). Absolute enumeration became progressively less accurate in crowded wells, where overlapping signals produced fewer individually resolvable intensity peaks. The current prototype therefore performs better for relative signal discrimination than for absolute spot counting at high densities. Further development will focus on separating touching/overlapping spots and improving high-density quantitation. See [`VALIDATION.md`](VALIDATION.md) for additional interpretation and the planned improvement path.
 
 ---
 
