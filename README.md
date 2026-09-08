@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="Wolf_Analytics_Logo.png" alt="Wolf Scientific Data Analysis & Automation" width="420">
+</p>
 # Wolf ELISpot Analyzer
 
 **Automated image analysis for 96-well ELISpot assay plates**
