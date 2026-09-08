@@ -6,7 +6,7 @@
 
 **Automated image analysis for 96-well ELISpot assay plates**
 
-Wolf ELISpot Analyzer is a Python module for loading an ELISpot plate image, locating the plate, mapping the standard 8 × 12 well layout, identifying discrete spot-forming units within each well, applying basic image-quality checks, and exporting quantitative per-well results.
+Wolf ELISpot Analyzer is a Python module that takes a 96-well ELISpot plate image, identifies the plate and well layout, measures spot signal in each well, applies basic image-QC checks, and exports quantitative well-level results.
 
 The project was developed as part of **Wolf Analytics**, a scientific data-analysis and automation portfolio focused on practical assay workflows, reproducible analysis, and decision-support tools.
 
@@ -24,11 +24,11 @@ The project was developed as part of **Wolf Analytics**, a scientific data-analy
 
 ## Why this project matters
 
-Traditional ELISpot analysis can require specialized reader software or manual review. This project explores a transparent, reproducible Python workflow that converts a plate image into structured well-level data.
+ELISpot analysis often relies on dedicated reader software or manual review. This project tests whether an open Python workflow can turn a standard plate image into structured, reviewable well-level data.
 
-The analyzer is designed to answer a simple question:
+The practical question is simple:
 
-**Can a standard plate image be transformed automatically into auditable, well-by-well spot measurements using open scientific Python tools?**
+**Can a standard ELISpot plate image be analyzed automatically, well by well, using open scientific Python tools?**
 
 The initial module performs:
 
@@ -63,7 +63,7 @@ This module treats every well as an independent image-analysis region. For each 
 5. independently segments connected signal regions for area measurements; and
 6. returns spot count plus supporting intensity, area, and QC metrics.
 
-The workflow is deliberately transparent so that the scientific assumptions can be inspected and modified.
+The analysis steps are kept explicit so that the assumptions can be reviewed and changed as needed.
 
 ---
 
@@ -167,12 +167,12 @@ Example fields:
 | Field | Meaning |
 |---|---|
 | `well` | Well identifier such as A1 or H12 |
-| `spot_count` | Number of accepted connected spot objects |
-| `spot_area_px` | Total segmented spot area |
-| `mean_spot_area_px` | Mean connected-component area |
-| `median_spot_area_px` | Median connected-component area |
+| `spot_count` | Number of detected local-intensity peaks used as candidate spot events |
+| `segmented_spot_area_px` | Total segmented signal area |
+| `mean_component_area_px` | Mean connected-component area |
+| `median_component_area_px` | Median connected-component area |
 | `integrated_darkness` | Cumulative local darkness signal |
-| `mean_background_intensity` | Median/mean well background estimate |
+| `median_background_intensity` | Median well background intensity |
 | `well_qc` | PASS or a warning flag |
 
 ### 2. Rectified plate image
@@ -190,6 +190,56 @@ A plate-format visualization of detected events per well.
 ### 5. Analysis metadata JSON
 
 Stores the detected plate corners and the exact analysis parameters used, supporting reproducibility and auditability.
+
+## Example Plate Analysis
+
+The examples below show how the experimental layout, synthetic ELISpot image, and automated analysis output fit together.
+
+> **Note:** These layouts are illustrative synthetic designs created for portfolio demonstration. The plate images and spot distributions were generated separately, so the assigned sample conditions should not be interpreted as the cause of the observed spot patterns.
+
+### Plate 1 – IFN-γ ELISpot
+
+#### Illustrative experimental layout
+
+![Plate 1 IFN-gamma experimental map](assets/ELISpot_Plate_1_IFN-gamma_experimental_plate_map.png)
+
+Each row represents one synthetic sample (`S01–S08`). Conditions are organized in triplicate:
+
+- Columns 1–3: Negative control
+- Columns 4–6: Antigen Pool A
+- Columns 7–9: Antigen Pool B
+- Columns 10–12: Positive control
+
+#### Synthetic ELISpot image
+
+![Plate 1 IFN-gamma ELISpot](assets/Plate_1_IFN-gamma_ELISpot.png)
+
+#### Automatically detected spot counts
+
+![Plate 1 IFN-gamma detected count map](assets/Plate_1_IFN-gamma_detected_count_map.png)
+
+---
+
+### Plate 2 – IL-2 ELISpot
+
+#### Illustrative experimental layout
+
+![Plate 2 IL-2 experimental map](assets/ELISpot_Plate_2_IL-2_experimental_plate_map.png)
+
+Each row represents one synthetic sample (`S01–S08`). Conditions are organized in triplicate:
+
+- Columns 1–3: Negative control
+- Columns 4–6: Low-antigen stimulation
+- Columns 7–9: High-antigen stimulation
+- Columns 10–12: Positive control
+
+#### Synthetic ELISpot image
+
+![Plate 2 IL-2 ELISpot](assets/Plate_2_IL-2_ELISpot.png)
+
+#### Automatically detected spot counts
+
+![Plate 2 IL-2 detected count map](assets/Plate_2_IL-2_detected_count_map.png)
 
 ---
 
@@ -217,7 +267,7 @@ The validation script compares detected counts with the known synthetic counts a
 - mean relative error; and
 - Pearson correlation.
 
-This is an important design feature of the project: the algorithm can be evaluated quantitatively and improved iteratively.
+Because the generated spot count is known for every well, the analyzer can be tested quantitatively and adjusted as the algorithm develops.
 
 ---
 
@@ -245,14 +295,11 @@ A full-image fallback is used when the plate already fills the image.
 
 ### Well mapping
 
-After rectification, well centers are generated from:
+After the plate is rectified, the program first attempts to detect the circular wells and infer the 12-column × 8-row lattice automatically.
 
-- first-well position;
-- 9-mm pitch;
-- eight rows; and
-- twelve columns.
+If a reliable lattice cannot be identified, the analyzer falls back to the expected standard geometry using the first-well position and 9-mm well-to-well pitch.
 
-This avoids requiring a separate circle-detection result for every well.
+This provides automatic well detection while retaining a predictable fallback for standardized plate images.
 
 ### Background correction
 
@@ -268,9 +315,9 @@ Local intensity maxima in the background-corrected darkness surface are used as 
 
 ---
 
-## Quality-control philosophy
+## Quality control
 
-The module intentionally keeps QC separate from the final biological interpretation.
+The module reports image- and well-level QC flags separately from biological interpretation.
 
 Current image-level/well-level flags include:
 
@@ -334,13 +381,13 @@ Potential next steps include:
 
 ---
 
-## Portfolio significance
+## What this project demonstrates
 
-This project demonstrates an end-to-end scientific automation workflow combining:
+This project brings together:
 
-**ELISpot · image analysis · assay QC · computer vision · Python · OpenCV · data automation · validation · quantitative error analysis · scientific decision support**
+**ELISpot · image analysis · assay QC · computer vision · Python · OpenCV · data automation · quantitative validation · scientific decision support**
 
-The emphasis is not only on producing a spot count, but on building a workflow that is reproducible, testable, inspectable, and suitable for iterative scientific improvement.
+The goal is not simply to return a spot count. The workflow keeps the analysis traceable by preserving plate geometry, well-level results, QC flags, analysis parameters, and a synthetic benchmark that can be inspected as the algorithm is improved.
 
 ---
 
@@ -348,6 +395,6 @@ The emphasis is not only on producing a spot count, but on building a workflow t
 
 **Wolf Analytics**  
 Scientific Data Analysis & Automation  
-March 2026 – Present
+March 2026 - Present
 
 Synthetic data are used for portfolio demonstration and algorithm testing. No client, patient, or proprietary experimental data are included.
