@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Wolf_Analytics_Logo.png" alt="Wolf Scientific Data Analysis & Automation" width="420">
+  <img src="Wolf_Analytics_Logo.png" alt="Wolf Scientific Data Analysis & Automation" width="350">
 </p>
 
 # Wolf ELISpot Analyzer
@@ -11,6 +11,14 @@ Wolf ELISpot Analyzer is a Python module for loading an ELISpot plate image, loc
 The project was developed as part of **Wolf Analytics**, a scientific data-analysis and automation portfolio focused on practical assay workflows, reproducible analysis, and decision-support tools.
 
 > **Project status:** portfolio / research prototype. The included synthetic plates have known spot counts and are intended for algorithm development and validation. Results from real assay images should be independently validated before use in regulated, diagnostic, or release-testing workflows.
+
+## Key Results
+
+- Automated mapping and analysis of all 96 wells
+- Batch processing of plate images
+- Per-well spot counts, signal metrics, QC flags, and heatmaps
+- Synthetic benchmark across 192 wells
+- Pearson correlation with known generated spot counts: **r = 0.922**
 
 ---
 
