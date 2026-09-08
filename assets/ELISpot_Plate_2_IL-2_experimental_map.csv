@@ -1,0 +1,97 @@
+well,row,column,sample_id,analyte,condition,condition_code,replicate,details
+A1,A,1,S01,IL-2,Negative control,NEG,1,Media / vehicle only
+A2,A,2,S01,IL-2,Negative control,NEG,2,Media / vehicle only
+A3,A,3,S01,IL-2,Negative control,NEG,3,Media / vehicle only
+A4,A,4,S01,IL-2,Low antigen,Ag-L,1,Synthetic low-stimulation condition
+A5,A,5,S01,IL-2,Low antigen,Ag-L,2,Synthetic low-stimulation condition
+A6,A,6,S01,IL-2,Low antigen,Ag-L,3,Synthetic low-stimulation condition
+A7,A,7,S01,IL-2,High antigen,Ag-H,1,Synthetic high-stimulation condition
+A8,A,8,S01,IL-2,High antigen,Ag-H,2,Synthetic high-stimulation condition
+A9,A,9,S01,IL-2,High antigen,Ag-H,3,Synthetic high-stimulation condition
+A10,A,10,S01,IL-2,Positive control,POS,1,Mitogen positive control
+A11,A,11,S01,IL-2,Positive control,POS,2,Mitogen positive control
+A12,A,12,S01,IL-2,Positive control,POS,3,Mitogen positive control
+B1,B,1,S02,IL-2,Negative control,NEG,1,Media / vehicle only
+B2,B,2,S02,IL-2,Negative control,NEG,2,Media / vehicle only
+B3,B,3,S02,IL-2,Negative control,NEG,3,Media / vehicle only
+B4,B,4,S02,IL-2,Low antigen,Ag-L,1,Synthetic low-stimulation condition
+B5,B,5,S02,IL-2,Low antigen,Ag-L,2,Synthetic low-stimulation condition
+B6,B,6,S02,IL-2,Low antigen,Ag-L,3,Synthetic low-stimulation condition
+B7,B,7,S02,IL-2,High antigen,Ag-H,1,Synthetic high-stimulation condition
+B8,B,8,S02,IL-2,High antigen,Ag-H,2,Synthetic high-stimulation condition
+B9,B,9,S02,IL-2,High antigen,Ag-H,3,Synthetic high-stimulation condition
+B10,B,10,S02,IL-2,Positive control,POS,1,Mitogen positive control
+B11,B,11,S02,IL-2,Positive control,POS,2,Mitogen positive control
+B12,B,12,S02,IL-2,Positive control,POS,3,Mitogen positive control
+C1,C,1,S03,IL-2,Negative control,NEG,1,Media / vehicle only
+C2,C,2,S03,IL-2,Negative control,NEG,2,Media / vehicle only
+C3,C,3,S03,IL-2,Negative control,NEG,3,Media / vehicle only
+C4,C,4,S03,IL-2,Low antigen,Ag-L,1,Synthetic low-stimulation condition
+C5,C,5,S03,IL-2,Low antigen,Ag-L,2,Synthetic low-stimulation condition
+C6,C,6,S03,IL-2,Low antigen,Ag-L,3,Synthetic low-stimulation condition
+C7,C,7,S03,IL-2,High antigen,Ag-H,1,Synthetic high-stimulation condition
+C8,C,8,S03,IL-2,High antigen,Ag-H,2,Synthetic high-stimulation condition
+C9,C,9,S03,IL-2,High antigen,Ag-H,3,Synthetic high-stimulation condition
+C10,C,10,S03,IL-2,Positive control,POS,1,Mitogen positive control
+C11,C,11,S03,IL-2,Positive control,POS,2,Mitogen positive control
+C12,C,12,S03,IL-2,Positive control,POS,3,Mitogen positive control
+D1,D,1,S04,IL-2,Negative control,NEG,1,Media / vehicle only
+D2,D,2,S04,IL-2,Negative control,NEG,2,Media / vehicle only
+D3,D,3,S04,IL-2,Negative control,NEG,3,Media / vehicle only
+D4,D,4,S04,IL-2,Low antigen,Ag-L,1,Synthetic low-stimulation condition
+D5,D,5,S04,IL-2,Low antigen,Ag-L,2,Synthetic low-stimulation condition
+D6,D,6,S04,IL-2,Low antigen,Ag-L,3,Synthetic low-stimulation condition
+D7,D,7,S04,IL-2,High antigen,Ag-H,1,Synthetic high-stimulation condition
+D8,D,8,S04,IL-2,High antigen,Ag-H,2,Synthetic high-stimulation condition
+D9,D,9,S04,IL-2,High antigen,Ag-H,3,Synthetic high-stimulation condition
+D10,D,10,S04,IL-2,Positive control,POS,1,Mitogen positive control
+D11,D,11,S04,IL-2,Positive control,POS,2,Mitogen positive control
+D12,D,12,S04,IL-2,Positive control,POS,3,Mitogen positive control
+E1,E,1,S05,IL-2,Negative control,NEG,1,Media / vehicle only
+E2,E,2,S05,IL-2,Negative control,NEG,2,Media / vehicle only
+E3,E,3,S05,IL-2,Negative control,NEG,3,Media / vehicle only
+E4,E,4,S05,IL-2,Low antigen,Ag-L,1,Synthetic low-stimulation condition
+E5,E,5,S05,IL-2,Low antigen,Ag-L,2,Synthetic low-stimulation condition
+E6,E,6,S05,IL-2,Low antigen,Ag-L,3,Synthetic low-stimulation condition
+E7,E,7,S05,IL-2,High antigen,Ag-H,1,Synthetic high-stimulation condition
+E8,E,8,S05,IL-2,High antigen,Ag-H,2,Synthetic high-stimulation condition
+E9,E,9,S05,IL-2,High antigen,Ag-H,3,Synthetic high-stimulation condition
+E10,E,10,S05,IL-2,Positive control,POS,1,Mitogen positive control
+E11,E,11,S05,IL-2,Positive control,POS,2,Mitogen positive control
+E12,E,12,S05,IL-2,Positive control,POS,3,Mitogen positive control
+F1,F,1,S06,IL-2,Negative control,NEG,1,Media / vehicle only
+F2,F,2,S06,IL-2,Negative control,NEG,2,Media / vehicle only
+F3,F,3,S06,IL-2,Negative control,NEG,3,Media / vehicle only
+F4,F,4,S06,IL-2,Low antigen,Ag-L,1,Synthetic low-stimulation condition
+F5,F,5,S06,IL-2,Low antigen,Ag-L,2,Synthetic low-stimulation condition
+F6,F,6,S06,IL-2,Low antigen,Ag-L,3,Synthetic low-stimulation condition
+F7,F,7,S06,IL-2,High antigen,Ag-H,1,Synthetic high-stimulation condition
+F8,F,8,S06,IL-2,High antigen,Ag-H,2,Synthetic high-stimulation condition
+F9,F,9,S06,IL-2,High antigen,Ag-H,3,Synthetic high-stimulation condition
+F10,F,10,S06,IL-2,Positive control,POS,1,Mitogen positive control
+F11,F,11,S06,IL-2,Positive control,POS,2,Mitogen positive control
+F12,F,12,S06,IL-2,Positive control,POS,3,Mitogen positive control
+G1,G,1,S07,IL-2,Negative control,NEG,1,Media / vehicle only
+G2,G,2,S07,IL-2,Negative control,NEG,2,Media / vehicle only
+G3,G,3,S07,IL-2,Negative control,NEG,3,Media / vehicle only
+G4,G,4,S07,IL-2,Low antigen,Ag-L,1,Synthetic low-stimulation condition
+G5,G,5,S07,IL-2,Low antigen,Ag-L,2,Synthetic low-stimulation condition
+G6,G,6,S07,IL-2,Low antigen,Ag-L,3,Synthetic low-stimulation condition
+G7,G,7,S07,IL-2,High antigen,Ag-H,1,Synthetic high-stimulation condition
+G8,G,8,S07,IL-2,High antigen,Ag-H,2,Synthetic high-stimulation condition
+G9,G,9,S07,IL-2,High antigen,Ag-H,3,Synthetic high-stimulation condition
+G10,G,10,S07,IL-2,Positive control,POS,1,Mitogen positive control
+G11,G,11,S07,IL-2,Positive control,POS,2,Mitogen positive control
+G12,G,12,S07,IL-2,Positive control,POS,3,Mitogen positive control
+H1,H,1,S08,IL-2,Negative control,NEG,1,Media / vehicle only
+H2,H,2,S08,IL-2,Negative control,NEG,2,Media / vehicle only
+H3,H,3,S08,IL-2,Negative control,NEG,3,Media / vehicle only
+H4,H,4,S08,IL-2,Low antigen,Ag-L,1,Synthetic low-stimulation condition
+H5,H,5,S08,IL-2,Low antigen,Ag-L,2,Synthetic low-stimulation condition
+H6,H,6,S08,IL-2,Low antigen,Ag-L,3,Synthetic low-stimulation condition
+H7,H,7,S08,IL-2,High antigen,Ag-H,1,Synthetic high-stimulation condition
+H8,H,8,S08,IL-2,High antigen,Ag-H,2,Synthetic high-stimulation condition
+H9,H,9,S08,IL-2,High antigen,Ag-H,3,Synthetic high-stimulation condition
+H10,H,10,S08,IL-2,Positive control,POS,1,Mitogen positive control
+H11,H,11,S08,IL-2,Positive control,POS,2,Mitogen positive control
+H12,H,12,S08,IL-2,Positive control,POS,3,Mitogen positive control
